@@ -38,7 +38,7 @@ jobs:
 
       - name: Build
         run: ./gradlew clean build
-      - name: Publish (CurseForge/Modrinth/GitHub)
+      - name: Publish (CurseForge/Modrinth)
         uses: Kir-Antipov/mc-publish@v3.3                                   #The specified MC-Publish GitHub Action in the version 3.2
         with:
           curseforge-id: 576601
@@ -46,6 +46,21 @@ jobs:
 
           modrinth-id: jZ1T46Hr
           modrinth-token: "${{env.MODRINTH_TOKEN}}"
+
+          name: "${{env.RELEASE_NAME}}"
+          version: "${{env.VERSION}}"
+          version-type: release
+          changelog-file: CHANGELOG.md
+
+          loaders: fabric
+          game-versions: "${{env.MINECRAFT_VERSION}}"
+          java: "${{env.JAVA_VERSION}}"
+
+          files: |
+            fabric/build/libs/!*+(sources|dev).jar
+      - name: Publish (Github)
+        uses: Kir-Antipov/mc-publish@v3.3                                   #The specified MC-Publish GitHub Action in the version 3.2
+        with:
 
           github-tag: "v${{env.VERSION}}"
           github-token: "${{env.GITHUB_TOKEN}}"
