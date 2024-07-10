@@ -57,7 +57,7 @@ jobs:
           java: "${{env.JAVA_VERSION}}"
 
           files: |
-            fabric/build/libs/!*+(sources|dev).jar
+            !fabric/build/libs/*+(sources|dev-shadow).jar
       - name: Publish (Github)
         uses: Kir-Antipov/mc-publish@v3.3                                   #The specified MC-Publish GitHub Action in the version 3.2
         with:
