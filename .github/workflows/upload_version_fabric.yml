@@ -3,10 +3,10 @@ name: upload_version_fabric
 on: [ workflow_dispatch ]
 
 env:
-  MINECRAFT_VERSION: 1.20.4
-  JAVA_VERSION: 17
-  VERSION: 1.1.5
-  RELEASE_NAME: 1.1.5-fabric
+  MINECRAFT_VERSION: 1.21
+  JAVA_VERSION: 21
+  VERSION: 1.1.6
+  RELEASE_NAME: 1.1.6-fabric
   MODRINTH_TOKEN: ${{ secrets.PUBLISH_MODRINTH_TOKEN }}
   CURSEFORGE_TOKEN: ${{ secrets.PUBLISH_CURSEFORGE_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.PUBLISH_GITHUB_TOKEN }}
@@ -30,7 +30,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: "temurin"
-          java-version: 17
+          java-version: 21
 
       - name: Make Gradle Wrapper Executable
         if: ${{ runner.os != 'Windows' }}

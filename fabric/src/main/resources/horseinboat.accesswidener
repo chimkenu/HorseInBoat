@@ -2,4 +2,5 @@ accessWidener v2 named
 
 extendable   method   net/minecraft/world/entity/Entity   getBoundingBox   ()Lnet/minecraft/world/phys/AABB;
 extendable   method   net/minecraft/world/entity/Entity   getEyeHeight   ()F
+extendable   method   net/minecraft/world/entity/LivingEntity   getDimensions   (Lnet/minecraft/world/entity/Pose;)Lnet/minecraft/world/entity/EntityDimensions;
 accessible   method   net/minecraft/world/entity/vehicle/Boat   getMaxPassengers   ()I

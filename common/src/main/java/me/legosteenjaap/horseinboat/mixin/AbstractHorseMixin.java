@@ -48,10 +48,10 @@ public abstract class AbstractHorseMixin extends Animal {
         if (this.isPassenger() && this.getVehicle() instanceof Boat ) {
             if (this.getVehicle().getPassengers().size() == 1) {
                 EntityDimensions dim = super.getDimensions(pose);
-                return EntityDimensions.scalable(dim.width, dim.height - this.getVehicle().getBbHeight());
+                return EntityDimensions.scalable(dim.width(), dim.height() - this.getVehicle().getBbHeight());
             } else {
                 EntityDimensions dim = super.getDimensions(pose);
-                return EntityDimensions.scalable(dim.width - 0.60f, dim.height - this.getVehicle().getBbHeight());
+                return EntityDimensions.scalable(dim.width() - 0.60f, dim.height() - this.getVehicle().getBbHeight());
             }
         }
         return super.getDimensions(pose);
