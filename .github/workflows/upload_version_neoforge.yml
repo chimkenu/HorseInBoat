@@ -64,6 +64,7 @@ jobs:
 
           github-tag: "v${{env.VERSION}}"
           github-token: "${{env.GITHUB_TOKEN}}"
+          github-commitish: "1.21"
 
           name: "$v{{env.VERSION}}"
           version: "${{env.VERSION}}"
